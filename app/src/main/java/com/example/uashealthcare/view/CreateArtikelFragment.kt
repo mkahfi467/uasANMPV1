@@ -1,6 +1,7 @@
 package com.example.uashealthcare.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.Navigation
 import com.example.uashealthcare.R
 import com.example.uashealthcare.model.Artikel
 import com.example.uashealthcare.viewmodel.DetailArtikelViewModel
+import com.google.android.material.textfield.TextInputEditText
 
 class CreateArtikelFragment : Fragment() {
     private lateinit var viewModel: DetailArtikelViewModel
@@ -29,19 +31,15 @@ class CreateArtikelFragment : Fragment() {
 
         val btnAdd = view.findViewById<Button>(R.id.btnAdd)
         btnAdd.setOnClickListener {
-//            val txtTitle = view.findViewById<EditText>(R.id.txtTitle)
-//            val txtNotes = view.findViewById<EditText>(R.id.txtNotes)
+            val judul = view.findViewById<EditText>(R.id.txtInputJudulArtikel)
+            val isi = view.findViewById<EditText>(R.id.txtInputIsiArtikel)
+            val urlFoto = view.findViewById<EditText>(R.id.txtInputFotoArtikel)
 
-            // CARA CEPAT UNTUK MENDAPATKAN RADIO YANG TERPILIH
-//            val radioGroup = view.findViewById<RadioGroup>(R.id.rdoGroupPriority)
-//            val radioButton = view.findViewById<RadioButton>(radioGroup.checkedRadioButtonId)
-
-//            var todo = Artikel(txtTitle.text.toString(), txtNotes.text.toString(), radioButton.tag.toString().toInt())
-            val artikel = Artikel("AAA", "BBB", "CCC")
+            val artikel = Artikel(judul.text.toString(), isi.text.toString(), urlFoto.text.toString())
 
             viewModel.addArtikel(artikel)
 
-            Toast.makeText(view.context, "Data added", Toast.LENGTH_LONG).show()
+            Toast.makeText(view.context, "Artikel berhasil dibuat", Toast.LENGTH_LONG).show()
             Navigation.findNavController(it).popBackStack()
         }
     }
