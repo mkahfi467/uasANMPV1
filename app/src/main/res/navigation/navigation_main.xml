@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/artikelListFragment">
+    <fragment
+        android:id="@+id/createArtikelFragment2"
+        android:name="com.example.uashealthcare.view.CreateArtikelFragment"
+        android:label="fragment_create_artikel"
+        tools:layout="@layout/fragment_create_artikel" />
+    <fragment
+        android:id="@+id/artikelListFragment"
+        android:name="com.example.uashealthcare.view.ArtikelListFragment"
+        android:label="fragment_artikel_list"
+        tools:layout="@layout/fragment_artikel_list" >
+        <action
+            android:id="@+id/actionCreateArtikel"
+            app:destination="@id/createArtikelFragment2" />
+    </fragment>
+</navigation>
