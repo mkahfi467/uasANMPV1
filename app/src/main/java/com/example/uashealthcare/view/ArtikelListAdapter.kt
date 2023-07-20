@@ -23,7 +23,7 @@ class ArtikelListAdapter(val artikelList:ArrayList<Artikel>, val adapterOnClick 
     override fun onBindViewHolder(holder: ArtikelViewHolder, position: Int) {
         holder.view.artikel = artikelList[position]
 //        holder.view.checklistener = this
-//        holder.view.editListener = this
+        holder.view.detailListener = this
     }
     override fun getItemCount(): Int {
         return artikelList.size
@@ -41,8 +41,8 @@ class ArtikelListAdapter(val artikelList:ArrayList<Artikel>, val adapterOnClick 
 //        }
 //    }
 
-//    override fun onTodoEditClick(v: View) {
-//        val action = TodoListFragmentDirections.actionEditTodoFragment(v.tag.toString().toInt())
-//        Navigation.findNavController(v).navigate(action)
-//    }
+    override fun onDetailClick(v: View) {
+        val action = ArtikelListFragmentDirections.actionDetailArtikel(v.tag.toString().toInt())
+        Navigation.findNavController(v).navigate(action)
+    }
 }

@@ -9,5 +9,5 @@ interface ArtikelItemLayoutInterface {
 //                        isChecked:Boolean,
 //                        obj: Artikel)
 //
-//    fun onTodoEditClick(v: View)
+    fun onDetailClick(v: View)
 }
