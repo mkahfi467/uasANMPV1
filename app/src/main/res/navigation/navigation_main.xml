@@ -8,7 +8,11 @@
         android:id="@+id/createArtikelFragment2"
         android:name="com.example.uashealthcare.view.CreateArtikelFragment"
         android:label="fragment_create_artikel"
-        tools:layout="@layout/fragment_create_artikel" />
+        tools:layout="@layout/fragment_create_artikel" >
+        <action
+            android:id="@+id/action_createArtikelFragment2_to_artikelListFragment"
+            app:destination="@id/artikelListFragment" />
+    </fragment>
     <fragment
         android:id="@+id/artikelListFragment"
         android:name="com.example.uashealthcare.view.ArtikelListFragment"
